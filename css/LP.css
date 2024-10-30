@@ -7,6 +7,25 @@ html{
     font-size: 62.5%;
 }
 
+button a{
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    background-color: #0B7174;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+}
+
+.btn button a:hover{
+    background-color: #4FCBC1;
+}
+
+.btn{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .center {
     text-align: center;
 }
@@ -36,12 +55,13 @@ html{
 }
 
 .top_img{
+    border: 1px solid tomato;
     transform: translate(-50%, -50%);
 }
 
 .logo{
     display: flex;
-    border: 1px solid tomato;
+    /* border: 1px solid tomato; */
 }
 
 .top>p{
@@ -152,7 +172,7 @@ html{
 .repulsion_wrap{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 15rem;
+    margin: 10rem auto;
 }
 
 .repulsion_txt{
@@ -303,6 +323,7 @@ hr{
 .merchandise_wrap{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 10rem;
 }
 
 .sea_glass_spike{
