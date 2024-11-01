@@ -14,12 +14,6 @@ body {
     height: 100%;
 }
 
-/* bodyとhtmlにw100%h100%をつけると、メインビジュアルで画面の高さ100%を取りたい時、
-h100vhを使わなくてもh100%を使うことができるよ。「なんで100vhじゃだめなのか」は調べてみて。
-*/
-
-/* ----------------- 共通クラス ----------------- */
-
 button a {
     font-size: 2rem;
     color: #fff;
@@ -27,21 +21,11 @@ button a {
     background-color: #0B7174;
     padding: 1.5rem 5rem;
     border-radius: 9999px;
-    /* 角の丸みをつけるとき、borderの太さなどは相対値(%やem,rem)ではなく、絶対値で書く。
-    なぜか: 相対的に変化すると、角の丸みが変わってしまうから。
-    「大きい画面の時にはめっちゃ丸くなるけど、小さい画面の時は尖ってる」を意図しているなら相対値だけど、
-    そんなことはないと思うから、絶対値で書いておくとよき。
-
-    角の丸みが左右で完全な丸の場合は超絶大きい数字を書くといいよ。
-    でもこの書き方は今じゃ古いらしい。最新のを調べてみてよ。
-    */
     transition: background-color .2s;
-    /* 「background-colorが変化する時のみ、0.2秒かけてtransition(変化)する」 */
 }
 
 .btn button a:hover {
     background-color: #065153;
-    /* hover時は暗くなる方が自然な気がするなぁ */
 }
 
 .btn {
@@ -54,25 +38,15 @@ button a {
     text-align: center;
 }
 
-/* ----------------- 共通クラス ここまで ----------------- */
-
-/* ----------------- .top ----------------- */
-
 .top {
     position: relative;
     height: calc(100% - 12rem);
     background: linear-gradient(#00564f, #4FCBC1, #B8EBE6);
-    /* paddingをつけた分、高さは「画面の縦幅 + 6rem + 6rem」になって
-    結果縦に長くなってしまうから、100%から12rem分引いて調整する */
     padding: 6rem;
-    /* カンプを見る限り、.topの中に存在する四辺の文字は同じ感覚でmargin(or padding)を持っているね。
-        それぞれ個別にpaddingを調整するよりも、.topで間隔を調整してあげた方がいいね。
-    */
 }
 
 .top>h1.header {
     width: fit-content;
-    /* fit-content は要素の持つ長さに合わせてくれる。今回の場合は文字列の長さに合わせてくれる。 */
     font-size: 4rem;
     color: #fff;
     font-family: 'A P-OTF Antique AN4+ ProN', serif;
@@ -87,20 +61,15 @@ button a {
     color: #fff;
     font-family: 'A P-OTF Futo Go B101 Pr6N', serif;
     line-height: 1.2;
-    /* line-heightに値をつけるの俺は好きじゃないなぁ。
-    好みの問題もあるけど、値をつけた時とそうじゃない時でもちろん違いあるから調べてみて。
-    */
 }
 
 .top_img {
     position: absolute;
     bottom: 0;
-    /* 画像を浮かせておいた方が、その後に来る要素を邪魔しない。 */
 }
 
 .product_info {
     width: calc(100% - 12rem);
-    /* .topのcalcと同じ要領。 */
     position: absolute;
     bottom: 6rem;
     display: flex;
@@ -114,10 +83,6 @@ button a {
     font-family: 'A P-OTF Futo Go B101 Pr6N', serif;
 }
 
-/* ----------------- .top ここまで ----------------- */
-
-/* ----------------- .main ----------------- */
-
 .main {
     background-color: #E2F5F3;
 }
@@ -126,22 +91,18 @@ button a {
     font-size: 2.8rem;
     text-align: center;
     font-weight: bolder;
-    /* 俺は太い方が好きだった。 */
     padding: 7rem;
 }
 
 .features h2 {
     font-size: 4.8rem;
     font-family: 'A P-OTF Gothic MB101KS+ ProN', serif;
-    /* text-align: center; */
     margin: 12rem auto;
-    /* margin autoでセンタリングするのか、text-alignでセンタリングするのか。どちらかに。 */
 }
 
 .sense_wrap {
     display: flex;
     justify-content: space-evenly;
-    /* なんかもっとこのへん綺麗にできそうな気がするが... */
 }
 
 
@@ -157,8 +118,6 @@ button a {
     height: 14rem;
 }
 
-/* こっから特に名前づけが不適切 */
-
 .sense {
     margin-right: 2.2rem;
 }
@@ -167,19 +126,11 @@ button a {
     margin-left: 2.2rem;
 }
 
-/* ここまで */
-
-/* この辺は画像じゃなくてコーディングでやった方がいいかも。なんか文字が下にズレてる気もする。
-class名がバラバラかつ、画像の内容をclass名で分別してるのは気になる。
-*/
-
 .sense_txt p {
     font-size: 2rem;
     font-family: 'A P-OTF Gothic MB101KS+ ProN', serif;
     font-weight: lighter;
     margin-top: 1rem;
-    /* line-height: 3.3rem; */
-    /* 単位ついてるのは嫌かもな。 */
 }
 
 .rigidity_wrap {
@@ -262,7 +213,6 @@ class名がバラバラかつ、画像の内容をclass名で分別してるの�
 .interview_wrap {
     width: 50%;
     min-width: 720px;
-    /* min-width 「指定値以上に縮まないように。 = 最小幅」 */
     margin: 12rem auto 0;
 }
 
@@ -295,7 +245,6 @@ class名がバラバラかつ、画像の内容をclass名で分別してるの�
 
 
 .interview img {
-    /* border-radius: 50%; */
     width: 100%;
 }
 
@@ -455,4 +404,23 @@ hr {
 
 .ds_light {
     opacity: 60%;
+}
+
+.line{
+    text-align: right;
+}
+
+@media(min-width:1280px){
+    .top_img img{
+        position: absolute;
+        top: -80rem;
+    }
+
+    .comment{
+        width: 10%;
+    }
+
+    .interview_wrap {
+        width: 90%;
+    }
 }
